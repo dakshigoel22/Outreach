@@ -42,8 +42,14 @@
 3. The Discover button is disabled while a search is in flight and re-enables after completion — no double-submit, no UI freeze.
 
 **Requirements:** DISC-01, DISC-02
-**Plans**: TBD
-**Research flag:** Verify Anthropic web_search tool type string (e.g. `"web_search_20250305"`) at https://docs.anthropic.com/en/docs/build-with-claude/tool-use/web-search-tool and current Claude model IDs at https://docs.anthropic.com/en/docs/about-claude/models before writing `services/claude.py`. The type string is versioned and training-data values may be stale.
+**Plans**: 5 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — SDK upgrade (anthropic 0.28.0→0.104.1), pytest setup, .env.example, tests/ skeleton
+- [ ] 02-02-PLAN.md — services/claude.py: Company model, discover_companies(), web_search integration
+- [ ] 02-03-PLAN.md — database/companies.py: save_company(), get_saved_company_identifiers(); session state filter keys
+- [ ] 02-04-PLAN.md — pages/1_Discover.py: full Discover page replacing placeholder
+- [ ] 02-05-PLAN.md — tests/test_claude_service.py + tests/test_companies_db.py
 
 ---
 
@@ -83,7 +89,7 @@
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 0/0 | Not started | - |
-| 2. Discovery | 0/0 | Not started | - |
+| 2. Discovery | 0/5 | Planned | - |
 | 3. Contacts + Email | 0/0 | Not started | - |
 | 4. Tracker + Dashboard | 0/0 | Not started | - |
 
