@@ -9,15 +9,15 @@
 
 | Field | Value |
 |-------|-------|
-| Current phase | Phase 1: Foundation |
+| Current phase | Phase 2: Discovery |
 | Current plan | — |
-| Status | Phase 1 complete (human verification pending for 4 runtime items) |
+| Status | Phase 2 context gathered — ready for planning |
 | Last updated | 2026-05-25 |
 
 **Progress:**
 ```
 [Phase 1] [✓] Complete (3/3 plans, human verification pending)
-[Phase 2] [ ] Not started
+[Phase 2] [◆] Context gathered — ready for planning
 [Phase 3] [ ] Not started
 [Phase 4] [ ] Not started
 ```
@@ -53,7 +53,7 @@
 
 ## Session Continuity
 
-**To resume:** Run `/gsd:plan-phase 1` to begin planning Phase 1.
+**To resume:** Run `/gsd:plan-phase 2` to plan Phase 2 (context ready at `.planning/phases/02-discovery/02-CONTEXT.md`).
 
 **Phase sequence:** 1 (Foundation) → 2 (Discovery) → 3 (Contacts + Email) → 4 (Tracker + Dashboard)
 
