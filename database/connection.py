@@ -12,18 +12,18 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Validate DB_PATH is not an absolute path outside cwd (T-01-03: path traversal mitigation)
+# Validate DB_PATH is within the project directory (T-01-03: path traversal mitigation).
+# Covers both absolute paths (e.g. /etc/passwd) and relative traversals (e.g. ../../etc/passwd).
 _raw_db_path = os.getenv("DB_PATH", "outreach.db")
 _db_path_obj = pathlib.Path(_raw_db_path)
-if _db_path_obj.is_absolute():
-    _cwd = pathlib.Path.cwd()
-    try:
-        _db_path_obj.resolve().relative_to(_cwd.resolve())
-    except ValueError as _exc:
-        raise ValueError(
-            f"DB_PATH '{_raw_db_path}' is an absolute path outside the project directory. "
-            "Set DB_PATH to a relative path (e.g. 'outreach.db')."
-        ) from _exc
+_cwd = pathlib.Path.cwd()
+try:
+    _db_path_obj.resolve().relative_to(_cwd.resolve())
+except ValueError as _exc:
+    raise ValueError(
+        f"DB_PATH '{_raw_db_path}' resolves outside the project directory. "
+        "Set DB_PATH to a path within the project (e.g. 'outreach.db')."
+    ) from _exc
 
 DB_PATH: pathlib.Path = _db_path_obj
 

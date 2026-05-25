@@ -3,6 +3,8 @@
 Every page must call init_session_state() as its second call (after set_page_config)
 to prevent KeyError when Streamlit renders a page cold (user navigates directly by URL).
 """
+import copy
+
 import streamlit as st
 
 SESSION_DEFAULTS: dict = {
@@ -26,4 +28,4 @@ def init_session_state() -> None:
     """
     for key, default in SESSION_DEFAULTS.items():
         if key not in st.session_state:
-            st.session_state[key] = default
+            st.session_state[key] = copy.deepcopy(default)

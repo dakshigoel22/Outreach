@@ -6,6 +6,7 @@ No Streamlit import — pure Python utility.
 Callers must validate that status is a known key before passing to status_badge()
 to prevent XSS via unsafe_allow_html=True in st.markdown (see threat T-03-01).
 """
+import html
 
 STATUS_COLORS: dict[str, dict[str, str]] = {
     "Not Contacted": {"bg": "#e5e7eb", "text": "#374151"},
@@ -32,5 +33,5 @@ def status_badge(status: str) -> str:
     return (
         f'<span style="background-color:{c["bg"]};color:{c["text"]};'
         f'padding:2px 8px;border-radius:4px;font-size:13px;font-weight:600;">'
-        f'{status}</span>'
+        f'{html.escape(status)}</span>'
     )

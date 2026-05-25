@@ -38,8 +38,8 @@ def save_profile(data: dict) -> None:
             (1, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
         """,
         (
-            data["full_name"],
-            data["school"],
+            data.get("full_name", ""),
+            data.get("school", ""),
             data.get("degree", ""),
             data.get("gpa", 0.0),
             data.get("years_experience", 0),
