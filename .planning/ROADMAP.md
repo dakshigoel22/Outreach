@@ -10,7 +10,7 @@
 ## Phases
 
 - [ ] **Phase 1: Foundation** - Running Streamlit app with SQLite schema, correct connection patterns, session state, and My Profile page
-- [ ] **Phase 2: Discovery** - Claude web_search pipeline discovers AI/ML startups and saves companies to DB
+- [x] **Phase 2: Discovery** - Claude web_search pipeline discovers AI/ML startups and saves companies to DB (completed 2026-05-26)
 - [ ] **Phase 3: Contacts + Email** - Contact discovery and manual add, Claude email drafting, Gmail MCP send
 - [ ] **Phase 4: Tracker + Dashboard** - Full pipeline tracker with inline edits, summary dashboard, and CSV export
 
@@ -45,11 +45,11 @@
 **Plans**: 5 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — SDK upgrade (anthropic 0.28.0→0.104.1), pytest setup, .env.example, tests/ skeleton
-- [ ] 02-02-PLAN.md — services/claude.py: Company model, discover_companies(), web_search integration
-- [ ] 02-03-PLAN.md — database/companies.py: save_company(), get_saved_company_identifiers(); session state filter keys
-- [ ] 02-04-PLAN.md — pages/1_Discover.py: full Discover page replacing placeholder
-- [ ] 02-05-PLAN.md — tests/test_claude_service.py + tests/test_companies_db.py
+- [x] 02-01-PLAN.md — SDK upgrade (anthropic 0.28.0→0.104.1), pytest setup, .env.example, tests/ skeleton
+- [x] 02-02-PLAN.md — services/claude.py: Company model, discover_companies(), web_search integration
+- [x] 02-03-PLAN.md — database/companies.py: save_company(), get_saved_company_identifiers(); session state filter keys
+- [x] 02-04-PLAN.md — pages/1_Discover.py: full Discover page replacing placeholder
+- [x] 02-05-PLAN.md — tests/test_claude_service.py + tests/test_companies_db.py
 
 ---
 
@@ -89,7 +89,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 0/0 | Not started | - |
-| 2. Discovery | 0/5 | Planned | - |
+| 2. Discovery | 5/5 | Complete   | 2026-05-26 |
 | 3. Contacts + Email | 0/0 | Not started | - |
 | 4. Tracker + Dashboard | 0/0 | Not started | - |
 
